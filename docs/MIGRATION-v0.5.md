@@ -1,0 +1,17 @@
+# v0.5 visual plan (before code)
+
+The pasted request is copied to SDD-v0.5.md. Its authoritative second reference image was not attached: only Pasted text.txt exists in the attachment folder. Requested its path/link; concept similarity and VA-10 comparison cannot be signed off without seeing it. Proceed with the explicit written changes, then compare if supplied. No claim of concept match based only on tests.
+
+- Preserve every Core/content byte and prior nine replay hashes, 32px grid, collider, economy, controls and all gameplay tests. No dependencies, energy or fake XP.
+- A: deterministic coordinate/material seeds; four shallow sculpted mass variants, multiple instanced stone/relief/pit details per tile; richer terracotta/purple stone colors; separate decorative fissures and authoritative damage branches.
+- B: 20° orthographic elevation. Compensate world Y scale by 1/cos(angle) to retain square frontal grid spacing. Blocks extend backwards from the logical front plane; exposed tops become visible. Character shear compensation keeps its silhouette in one logical cell. Cosmetic grounding offset places feet on the top face without changing collision. All conversion math remains in presentation.
+- C: articulated head/body/arm/leg pivots; pronounced alternating gait and opposing arms, bob/turn/head motion. Mining poses are phased from actual TileHit ticks, with a contact-point burst, recoil and continuation anticipation. Preserve one-cell bounds and reduced motion. Capture six frames each walking direction and full sequences on all four dig axes; inspect contact sheets, not just flags.
+- D: faceted gold in dark square recesses with warm edge accents; dark cave backing, cavity-edge contact shading, layered lighting and bounded contact particles. Reuse shared geometry/materials and instancing.
+- E: burgundy/brown tactile HUD with wallet/nugget, central depth, claw tier and truthful goal progress. Keep button accessible names/selectors compatible; move detailed guidance into a help/settings panel. Every visible control >=44 CSS px; maintain portrait/landscape and pause/restart/shop behavior.
+- F: full headless, typecheck, lint/build and production browser regressions; geometry/seed/gait/strike tests and visual samples at 390×844, 844×390 and 1920×1080. Record draw calls, frame intervals and resource reuse. Existing v0.4 frontal-camera-only presentation assertions must be updated to the explicitly requested elevated camera; gameplay assertions remain intact.
+
+Each stage requires test evidence and screenshot inspection before being called verified. Preserve previous renderer in archive/v0.5-migration. Missing target comparison is a required unresolved gate, regardless of technical success.
+
+## Reference supplied during implementation
+
+The user identified `StyleReference.png` in the project root. Inspected that image before the final refinement: richer clay grain, larger glowing gold, pronounced rocky inserts, a helmeted directional mole, closer gameplay framing and a dark depth pill. Added three tiny shared procedural data textures (clay color/normal and gold halo), cosmetic helmet/lamp and stronger head/body yaw; no reference pixels are used as runtime art. Natural claws replace the reference's pickaxe; truthful gold-goal progress replaces its unsupported XP display. Final screenshots must be compared with this supplied image, including temporal walking and mining captures.

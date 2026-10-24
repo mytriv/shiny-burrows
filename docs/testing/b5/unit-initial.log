@@ -1,0 +1,883 @@
+
+ RUN  v3.2.4 E:/LightPathfinder/shiny-burrows
+
+ ✓ tests/unit/camera.test.ts (5 tests) 7ms
+ ✓ tests/unit/v3-a.test.ts (2 tests) 11ms
+ ❯ tests/unit/ladder-mining-hotfix.test.ts (24 tests | 24 failed) 20ms
+   × -1: held dirt mining preserves exact height/grip and two-hit cadence 7ms
+     → Spawn must align to grid
+   × -1: first-hit release and interrupted cooldown retain stationary grip 1ms
+     → Spawn must align to grid
+   × -1: releasing on destruction holds, continuing moves only until actual support loss 1ms
+     → Spawn must align to grid
+   × -1: hard mines while suspended without falling or extra ladders 0ms
+     → Spawn must align to grid
+   × -1: ore_soil mines while suspended without falling or extra ladders 1ms
+     → Spawn must align to grid
+   × 1: held dirt mining preserves exact height/grip and two-hit cadence 0ms
+     → Spawn must align to grid
+   × 1: first-hit release and interrupted cooldown retain stationary grip 0ms
+     → Spawn must align to grid
+   × 1: releasing on destruction holds, continuing moves only until actual support loss 0ms
+     → Spawn must align to grid
+   × 1: hard mines while suspended without falling or extra ladders 0ms
+     → Spawn must align to grid
+   × 1: ore_soil mines while suspended without falling or extra ladders 1ms
+     → Spawn must align to grid
+   × empty horizontal movement keeps grip within tolerance and applies gravity only outside support 0ms
+     → Spawn must align to grid
+   × -1: suspended dirt at height 163.5 remains exactly two hits at every upgrade 1ms
+     → Spawn must align to grid
+   × -1: suspended dirt at height 175 remains exactly two hits at every upgrade 0ms
+     → Spawn must align to grid
+   × -1: suspended dirt at height 190 remains exactly two hits at every upgrade 0ms
+     → Spawn must align to grid
+   × -1: suspended dirt at height 198.75 remains exactly two hits at every upgrade 1ms
+     → Spawn must align to grid
+   × -1: a block touching only the feet or head is mined rather than losing grip 0ms
+     → Spawn must align to grid
+   × -1: interrupted damage regenerates without falling; bedrock blocks without detachment 0ms
+     → Spawn must align to grid
+   × 1: suspended dirt at height 163.5 remains exactly two hits at every upgrade 1ms
+     → Spawn must align to grid
+   × 1: suspended dirt at height 175 remains exactly two hits at every upgrade 0ms
+     → Spawn must align to grid
+   × 1: suspended dirt at height 190 remains exactly two hits at every upgrade 1ms
+     → Spawn must align to grid
+   × 1: suspended dirt at height 198.75 remains exactly two hits at every upgrade 0ms
+     → Spawn must align to grid
+   × 1: a block touching only the feet or head is mined rather than losing grip 0ms
+     → Spawn must align to grid
+   × 1: interrupted damage regenerates without falling; bedrock blocks without detachment 0ms
+     → Spawn must align to grid
+   × consecutive side blocks transition from suspended digging to supported tunnel mining, with interruption 0ms
+     → Spawn must align to grid
+ ✓ tests/unit/fragile-chain.test.ts (4 tests) 40ms
+ ❯ tests/unit/v3-f.test.ts (13 tests | 12 failed) 33ms
+   × V3-F automatic digging and correction window > contact hits immediately, stops walking, waits 24 ticks, then resumes through consecutive soil 11ms
+     → Spawn must align to grid
+   × V3-F automatic digging and correction window > short accidental press cannot remove soil at any upgrade tier 1ms
+     → Spawn must align to grid
+   × V3-F automatic digging and correction window > standard soil always takes exactly two distinct ticks, harder strata keep configured hits 1ms
+     → Spawn must align to grid
+   × V3-F automatic digging and correction window > release clears pending contact, preserves damage and reengagement waits a new interval 0ms
+     → Spawn must align to grid
+   × V3-F automatic digging and correction window > changing direction cancels old sequence and does not reset partial damage 0ms
+     → Spawn must align to grid
+   × V3-F automatic digging and correction window > repeated one-tick taps cannot bypass the hold interval 1ms
+     → Spawn must align to grid
+   × V3-F automatic digging and correction window > partial damage heals at 180 idle ticks and minimum protection is restored 0ms
+     → Spawn must align to grid
+   × V3-F automatic digging and correction window > does not mine before contact, through bedrock, while moving away or beyond nearest cell 1ms
+     → Spawn must align to grid
+   × V3-F automatic digging and correction window > solid wall gives a distinct single contact event and consumes no mining ticks or money 0ms
+     → Spawn must align to grid
+   × V3-F automatic digging and correction window > Down plus movement without Dig only mines horizontally, never floor or ladders/platforms 0ms
+     → Spawn must align to grid
+   ✓ V3-F automatic digging and correction window > Down alone excavates, creates traversed ladder segments and allows return 13ms
+   × V3-F automatic digging and correction window > 30/60/120 Hz and changing display cadence produce identical state and hit ticks 1ms
+     → Spawn must align to grid
+   × V3-F automatic digging and correction window > controller release, pause and capped catchup never schedule an extra hit 0ms
+     → Spawn must align to grid
+ ❯ tests/unit/overhaul-a.test.ts (12 tests | 5 failed) 48ms
+   ✓ Up never excavates even through the direct Core digging API 4ms
+   ✓ horizontal ladder exits and same-row falling never backfill a neighboring cell 1ms
+   ✓ downward row crossings create only entered cells, once, including long falls 2ms
+   ✓ collision paths and diagonal junctions authorize downward rows, never lateral entries 0ms
+   ✓ blocked transitions are processed once and cannot become rungs on a repeated collision path 0ms
+   × actual lateral detachment during climbing does not turn gravity microsteps into extra rungs 7ms
+     → Player must occupy one grid cell
+   × landing and repeated grounded collision resolution do not enter the solid floor cell 2ms
+     → Player must occupy one grid cell
+   × diagonal falls past a ladder junction process each crossed row once without upward creation 1ms
+     → Player must occupy one grid cell
+   × Up on an existing ladder holds grip at a solid ceiling without damaging terrain or adding rungs 1ms
+     → Player must occupy one grid cell
+   ✓ First Burrow natural shaft returns to the original bank without upward excavation or added anchors 24ms
+   × shaft-top foothold supports dismount only: Down bypasses it and falls already below it continue 2ms
+     → Player must occupy one grid cell
+   ✓ existing platforms connect the top of a return ladder without creating occupied rungs 4ms
+ ❯ tests/unit/v3-platforms.test.ts (10 tests | 4 failed) 36ms
+   ✓ atomic buy and placement consume money/inventory separately; invalid placements cost nothing 5ms
+   ✓ placement rejects airborne, overlap, occupied, distant, out-of-bounds and no inventory 1ms
+   × paid crossing supports walking; no-spend route falls to lower floor 8ms
+     → expected 368 to be close to 304, received difference is 64, but expected 0.005
+   ✓ intentional drop ignores only supporting platform until entire body clears; no snapback 8ms
+   × holding Down drops one stacked platform only, release and repress drops next 6ms
+     → expected 288 to be 224 // Object.is equality
+   × one-way platforms do not block sides or ascent and catch terminal falls 2ms
+     → Player must occupy one grid cell
+   ✓ platform drop takes priority over a nearby ladder and ladder cannot replace platform 1ms
+   ✓ buy/place edges consumed once during five-tick controller catchup 1ms
+   ✓ ladder crosses a platform from below and walking off its boundary falls 2ms
+   × drop at a platform edge succeeds only when the collider clears the adjoining solid bank 1ms
+     → Player must occupy one grid cell
+stdout | tests/levels/v3-progression.test.ts > all three authored levels solve with base power, no spending or jumps
+First Burrow base route: 1191 ticks / 19.9s
+Amber Hollow base route: 1349 ticks / 22.5s
+Golden Depths base route: 2035 ticks / 33.9s
+
+ ❯ tests/unit/v4-preservation.test.ts (2 tests | 2 failed) 113ms
+   × Milestone B preserves unrelated Core modules 38ms
+     → src\core\boulders.ts: expected '797F17F39E657AF91B53838553482341A3D6C…' to be '685F48247312DD616CB96B1A695F3B98B23BE…' // Object.is equality
+   × all nine campaign routes preserve completion ticks and intentional B rewards; discovery replays exactly 73ms
+     → expected 1191 to be 1763 // Object.is equality
+ ❯ tests/unit/v3-g.test.ts (19 tests | 8 failed) 172ms
+   × idle grip preserves off-center position; actual loss of ladder support restores gravity 11ms
+     → Spawn must align to grid
+   × releasing Down holds mid-shaft; intentional platform drop overrides an established grip 17ms
+     → expected true to be false // Object.is equality
+   × left auto-digs with the same first/second hit ticks and no manual Dig 1ms
+     → Spawn must align to grid
+   × left preserves two-hit minimum and exact gold +1 at every power 1ms
+     → Spawn must align to grid
+   × right auto-digs with the same first/second hit ticks and no manual Dig 1ms
+     → Spawn must align to grid
+   × right preserves two-hit minimum and exact gold +1 at every power 0ms
+     → Spawn must align to grid
+   ✓ down auto-digs with the same first/second hit ticks and no manual Dig 3ms
+   ✓ down preserves two-hit minimum and exact gold +1 at every power 76ms
+   ✓ Down alone continuously excavates several layers and adds only actually traversed ladders 6ms
+   ✓ walking off a ledge creates a free continuous return shaft in previously empty space 5ms
+   ✓ gravity and high-speed falls ladder each crossed row without hovering, duplicates or terrain overlap 3ms
+   ✓ traversal enumeration covers multiple crossed cells and does not create horizontal ladders 0ms
+   ✓ ladder placement refuses solids, treasure, rocks and platform structures 0ms
+   × release/reversal interrupts all axes, partial and gold-layer damage regenerates normally 1ms
+     → Spawn must align to grid
+   ✓ platform drop wins over existing ladders, adds a return path and re-enables Up after clearance 6ms
+   ✓ pause freezes movement, mining and ladder generation; restart clears processed cells/segments 1ms
+   ✓ 30/60/120Hz display grouping and deterministic repeated falling runs have identical outcomes 14ms
+   × Down gently aligns an off-center mole before excavation without clipping neighboring floor 1ms
+     → Player must occupy one grid cell
+   ✓ climb/release and sideways stepping cannot ratchet free ladders upward into air 21ms
+ ✓ tests/unit/v4-geometry.test.ts (4 tests) 11ms
+ ❯ tests/unit/hazards.test.ts (10 tests | 1 failed) 295ms
+   ✓ [P-ROCK-01] supported rock stays still; removing support releases in same tick 13ms
+   × [P-ROCK-01] rock falls in real time, stops on terrain and is solid from sides 17ms
+     → expected 112 to be 118 // Object.is equality
+   ✓ [P-ROCK-01] entering a released rock column is a gentle crush failure 2ms
+   ✓ P1: falling rock shatters fragile without generating loot 3ms
+   ✓ rocks deliberately ignore one-way platform support 4ms
+   ✓ rock advancement and events replay identically over 1000 ticks 157ms
+   ✓ two unsupported rocks are released bottom-to-top then left-to-right 1ms
+   ✓ [P-RESET-01] restart restores full terrain/economy/rock state after failure 4ms
+   ✓ level validation rejects duplicate rocks, rock/solid and rock/spawn overlap 3ms
+   ✓ player cannot overlap bedrock or rocks throughout a complex 1000-tick stream 90ms
+ ✓ tests/levels/v3-progression.test.ts (6 tests) 370ms
+ ✓ tests/unit/v4-terrain.test.ts (1 test) 116ms
+ ✓ tests/unit/v4-objects.test.ts (2 tests) 92ms
+ ✓ tests/unit/v061-visual.test.ts (4 tests) 186ms
+ ✓ tests/unit/v4-mole.test.ts (1 test) 252ms
+ ❯ tests/unit/v3-movement-mining.test.ts (18 tests | 7 failed) 647ms
+   ✓ no jump API; even legacy jump data cannot produce ascent on ground 7ms
+   × walks both directions, falls off an edge and settles on lower ground 9ms
+     → expected 112 to be close to 81.6, received difference is 30.400000000000006, but expected 0.005
+   × terminal falls, wall collision, world bounds and kill boundary 2ms
+     → Spawn must align to grid
+   ✓ fixed delta only, malformed geometry rejected 4ms
+   ✓ terrain uses 2/3/3/5 integrity and power reduces hits by ceil formula 6ms
+   ✓ partial integrity resets after exactly 180 idle ticks, active hits refresh timer 1ms
+   × held movement repeats cadence, empty/distant/solid cells cannot pay twice 2ms
+     → Player must occupy one grid cell
+   × facing updates before strike even while blocked; no separate aiming exists 1ms
+     → Player must occupy one grid cell
+   ✓ Up on supported terrain without a ladder cannot fly or mine 16ms
+   ✓ three-layer excavation adds entered-cell segments, Up returns to surface safely 13ms
+   ✓ falling through both excavated and natural shafts creates ladders 11ms
+   × ladder alignment tolerance, reentry, solid ceiling and overlays cannot replace terrain 5ms
+     → Player must occupy one grid cell
+   ✓ pause freezes damage timers and resume catchup; restart clears damage and ladders 2ms
+   ✓ 1000 ticks replay states/events exactly with no overlaps or negative funds  548ms
+   ✓ display frame grouping preserves deterministic simulation and held dig 7ms
+   × solid ceiling stops ladder ascent without clipping; released ladder grip holds position 11ms
+     → expected 224 to be 218 // Object.is equality
+   × interrupted mining preserves damage before timeout; destroyed floor never regrows 1ms
+     → Player must occupy one grid cell
+   ✓ malformed hardness, reward metadata and entry economy rejected 1ms
+ ✓ tests/unit/discovery-b.test.ts (19 tests) 332ms
+ ✓ tests/unit/v5-visual.test.ts (4 tests) 394ms
+   ✓ clay surfaces remain deterministic across renderer recreation and reuse shared textures  371ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 63 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/hazards.test.ts > [P-ROCK-01] rock falls in real time, stops on terrain and is solid from sides
+AssertionError: expected 112 to be 118 // Object.is equality
+
+- Expected
++ Received
+
+- 118
++ 112
+
+ ❯ tests/unit/hazards.test.ts:19:371
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/63]⎯
+
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > -1: held dirt mining preserves exact height/grip and two-hit cadence
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > 1: held dirt mining preserves exact height/grip and two-hit cadence
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ fixture tests/unit/ladder-mining-hotfix.test.ts:11:10
+ ❯ tests/unit/ladder-mining-hotfix.test.ts:17:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/63]⎯
+
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > -1: first-hit release and interrupted cooldown retain stationary grip
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > 1: first-hit release and interrupted cooldown retain stationary grip
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ fixture tests/unit/ladder-mining-hotfix.test.ts:11:10
+ ❯ tests/unit/ladder-mining-hotfix.test.ts:23:17
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/63]⎯
+
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > -1: releasing on destruction holds, continuing moves only until actual support loss
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > 1: releasing on destruction holds, continuing moves only until actual support loss
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ fixture tests/unit/ladder-mining-hotfix.test.ts:11:10
+ ❯ tests/unit/ladder-mining-hotfix.test.ts:29:17
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/63]⎯
+
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > -1: hard mines while suspended without falling or extra ladders
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > -1: ore_soil mines while suspended without falling or extra ladders
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > 1: hard mines while suspended without falling or extra ladders
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > 1: ore_soil mines while suspended without falling or extra ladders
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ fixture tests/unit/ladder-mining-hotfix.test.ts:11:10
+ ❯ tests/unit/ladder-mining-hotfix.test.ts:44:17
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/63]⎯
+
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > empty horizontal movement keeps grip within tolerance and applies gravity only outside support
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ fixture tests/unit/ladder-mining-hotfix.test.ts:11:10
+ ❯ tests/unit/ladder-mining-hotfix.test.ts:53:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/63]⎯
+
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > -1: suspended dirt at height 163.5 remains exactly two hits at every upgrade
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > -1: suspended dirt at height 175 remains exactly two hits at every upgrade
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > -1: suspended dirt at height 190 remains exactly two hits at every upgrade
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > -1: suspended dirt at height 198.75 remains exactly two hits at every upgrade
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > 1: suspended dirt at height 163.5 remains exactly two hits at every upgrade
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > 1: suspended dirt at height 175 remains exactly two hits at every upgrade
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > 1: suspended dirt at height 190 remains exactly two hits at every upgrade
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > 1: suspended dirt at height 198.75 remains exactly two hits at every upgrade
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ fixture tests/unit/ladder-mining-hotfix.test.ts:11:10
+ ❯ tests/unit/ladder-mining-hotfix.test.ts:60:47
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/63]⎯
+
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > -1: a block touching only the feet or head is mined rather than losing grip
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > 1: a block touching only the feet or head is mined rather than losing grip
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ fixture tests/unit/ladder-mining-hotfix.test.ts:11:10
+ ❯ tests/unit/ladder-mining-hotfix.test.ts:63:66
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/63]⎯
+
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > -1: interrupted damage regenerates without falling; bedrock blocks without detachment
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > 1: interrupted damage regenerates without falling; bedrock blocks without detachment
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ fixture tests/unit/ladder-mining-hotfix.test.ts:11:10
+ ❯ tests/unit/ladder-mining-hotfix.test.ts:68:17
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/63]⎯
+
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > consecutive side blocks transition from suspended digging to supported tunnel mining, with interruption
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ fixture tests/unit/ladder-mining-hotfix.test.ts:11:10
+ ❯ tests/unit/ladder-mining-hotfix.test.ts:74:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/63]⎯
+
+ FAIL  tests/unit/overhaul-a.test.ts > actual lateral detachment during climbing does not turn gravity microsteps into extra rungs
+Error: Player must occupy one grid cell
+ ❯ movePlayer src/core/motion.ts:8:63
+      6| export function movePlayer(s:GameState,input:InputIntent):StepResult {
+      7|  const p=s.player,c=playerCell(s),events:GameEvent[]=[],at=(cell:Vec2)…
+      8|  if(p.position.x!==c.x*32+16||p.position.y!==(c.y+1)*32)throw new Erro…
+       |                                                               ^
+      9|  if(traversing(s))return {state:s,events,motionPath:[p.position]};
+     10|  const ignored=s.ignoredPlatforms.filter(b=>b.y>c.y),below={x:c.x,y:c.…
+ ❯ stepGame src/core/simulation.ts:18:17
+ ❯ tests/unit/overhaul-a.test.ts:39:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/63]⎯
+
+ FAIL  tests/unit/overhaul-a.test.ts > landing and repeated grounded collision resolution do not enter the solid floor cell
+Error: Player must occupy one grid cell
+ ❯ movePlayer src/core/motion.ts:8:63
+      6| export function movePlayer(s:GameState,input:InputIntent):StepResult {
+      7|  const p=s.player,c=playerCell(s),events:GameEvent[]=[],at=(cell:Vec2)…
+      8|  if(p.position.x!==c.x*32+16||p.position.y!==(c.y+1)*32)throw new Erro…
+       |                                                               ^
+      9|  if(traversing(s))return {state:s,events,motionPath:[p.position]};
+     10|  const ignored=s.ignoredPlatforms.filter(b=>b.y>c.y),below={x:c.x,y:c.…
+ ❯ stepGame src/core/simulation.ts:18:17
+ ❯ tests/unit/overhaul-a.test.ts:46:25
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/63]⎯
+
+ FAIL  tests/unit/overhaul-a.test.ts > diagonal falls past a ladder junction process each crossed row once without upward creation
+Error: Player must occupy one grid cell
+ ❯ movePlayer src/core/motion.ts:8:63
+      6| export function movePlayer(s:GameState,input:InputIntent):StepResult {
+      7|  const p=s.player,c=playerCell(s),events:GameEvent[]=[],at=(cell:Vec2)…
+      8|  if(p.position.x!==c.x*32+16||p.position.y!==(c.y+1)*32)throw new Erro…
+       |                                                               ^
+      9|  if(traversing(s))return {state:s,events,motionPath:[p.position]};
+     10|  const ignored=s.ignoredPlatforms.filter(b=>b.y>c.y),below={x:c.x,y:c.…
+ ❯ stepGame src/core/simulation.ts:18:17
+ ❯ tests/unit/overhaul-a.test.ts:52:32
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/63]⎯
+
+ FAIL  tests/unit/overhaul-a.test.ts > Up on an existing ladder holds grip at a solid ceiling without damaging terrain or adding rungs
+Error: Player must occupy one grid cell
+ ❯ movePlayer src/core/motion.ts:8:63
+      6| export function movePlayer(s:GameState,input:InputIntent):StepResult {
+      7|  const p=s.player,c=playerCell(s),events:GameEvent[]=[],at=(cell:Vec2)…
+      8|  if(p.position.x!==c.x*32+16||p.position.y!==(c.y+1)*32)throw new Erro…
+       |                                                               ^
+      9|  if(traversing(s))return {state:s,events,motionPath:[p.position]};
+     10|  const ignored=s.ignoredPlatforms.filter(b=>b.y>c.y),below={x:c.x,y:c.…
+ ❯ stepGame src/core/simulation.ts:18:17
+ ❯ tests/unit/overhaul-a.test.ts:59:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/63]⎯
+
+ FAIL  tests/unit/overhaul-a.test.ts > shaft-top foothold supports dismount only: Down bypasses it and falls already below it continue
+Error: Player must occupy one grid cell
+ ❯ movePlayer src/core/motion.ts:8:63
+      6| export function movePlayer(s:GameState,input:InputIntent):StepResult {
+      7|  const p=s.player,c=playerCell(s),events:GameEvent[]=[],at=(cell:Vec2)…
+      8|  if(p.position.x!==c.x*32+16||p.position.y!==(c.y+1)*32)throw new Erro…
+       |                                                               ^
+      9|  if(traversing(s))return {state:s,events,motionPath:[p.position]};
+     10|  const ignored=s.ignoredPlatforms.filter(b=>b.y>c.y),below={x:c.x,y:c.…
+ ❯ stepGame src/core/simulation.ts:18:17
+ ❯ tests/unit/overhaul-a.test.ts:77:14
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/63]⎯
+
+ FAIL  tests/unit/v3-f.test.ts > V3-F automatic digging and correction window > contact hits immediately, stops walking, waits 24 ticks, then resumes through consecutive soil
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ fixture tests/unit/v3-f.test.ts:13:15
+ ❯ tests/unit/v3-f.test.ts:22:17
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/63]⎯
+
+ FAIL  tests/unit/v3-f.test.ts > V3-F automatic digging and correction window > short accidental press cannot remove soil at any upgrade tier
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ fixture tests/unit/v3-f.test.ts:13:15
+ ❯ tests/unit/v3-f.test.ts:28:121
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/63]⎯
+
+ FAIL  tests/unit/v3-f.test.ts > V3-F automatic digging and correction window > standard soil always takes exactly two distinct ticks, harder strata keep configured hits
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ fixture tests/unit/v3-f.test.ts:13:15
+ ❯ tests/unit/v3-f.test.ts:31:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/63]⎯
+
+ FAIL  tests/unit/v3-f.test.ts > V3-F automatic digging and correction window > release clears pending contact, preserves damage and reengagement waits a new interval
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ fixture tests/unit/v3-f.test.ts:13:15
+ ❯ tests/unit/v3-f.test.ts:35:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/63]⎯
+
+ FAIL  tests/unit/v3-f.test.ts > V3-F automatic digging and correction window > changing direction cancels old sequence and does not reset partial damage
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ fixture tests/unit/v3-f.test.ts:13:15
+ ❯ tests/unit/v3-f.test.ts:39:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/63]⎯
+
+ FAIL  tests/unit/v3-f.test.ts > V3-F automatic digging and correction window > repeated one-tick taps cannot bypass the hold interval
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ fixture tests/unit/v3-f.test.ts:13:15
+ ❯ tests/unit/v3-f.test.ts:42:73
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/63]⎯
+
+ FAIL  tests/unit/v3-f.test.ts > V3-F automatic digging and correction window > partial damage heals at 180 idle ticks and minimum protection is restored
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ fixture tests/unit/v3-f.test.ts:13:15
+ ❯ tests/unit/v3-f.test.ts:44:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/63]⎯
+
+ FAIL  tests/unit/v3-f.test.ts > V3-F automatic digging and correction window > does not mine before contact, through bedrock, while moving away or beyond nearest cell
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ fixture tests/unit/v3-f.test.ts:13:15
+ ❯ tests/unit/v3-f.test.ts:47:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/63]⎯
+
+ FAIL  tests/unit/v3-f.test.ts > V3-F automatic digging and correction window > solid wall gives a distinct single contact event and consumes no mining ticks or money
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ fixture tests/unit/v3-f.test.ts:13:15
+ ❯ tests/unit/v3-f.test.ts:51:111
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/63]⎯
+
+ FAIL  tests/unit/v3-f.test.ts > V3-F automatic digging and correction window > Down plus movement without Dig only mines horizontally, never floor or ladders/platforms
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ fixture tests/unit/v3-f.test.ts:13:15
+ ❯ tests/unit/v3-f.test.ts:52:115
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/63]⎯
+
+ FAIL  tests/unit/v3-f.test.ts > V3-F automatic digging and correction window > 30/60/120 Hz and changing display cadence produce identical state and hit ticks
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ new GameController src/app/GameController.ts:20:22
+ ❯ render tests/unit/v3-f.test.ts:55:53
+ ❯ tests/unit/v3-f.test.ts:56:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/63]⎯
+
+ FAIL  tests/unit/v3-f.test.ts > V3-F automatic digging and correction window > controller release, pause and capped catchup never schedule an extra hit
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ new GameController src/app/GameController.ts:20:22
+ ❯ tests/unit/v3-f.test.ts:59:93
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/63]⎯
+
+ FAIL  tests/unit/v3-g.test.ts > idle grip preserves off-center position; actual loss of ladder support restores gravity
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ contact tests/unit/v3-g.test.ts:25:561
+ ❯ tests/unit/v3-g.test.ts:11:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/63]⎯
+
+ FAIL  tests/unit/v3-g.test.ts > releasing Down holds mid-shaft; intentional platform drop overrides an established grip
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/unit/v3-g.test.ts:21:93
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/63]⎯
+
+ FAIL  tests/unit/v3-g.test.ts > left auto-digs with the same first/second hit ticks and no manual Dig
+ FAIL  tests/unit/v3-g.test.ts > right auto-digs with the same first/second hit ticks and no manual Dig
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ contact tests/unit/v3-g.test.ts:25:561
+ ❯ tests/unit/v3-g.test.ts:27:96
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[30/63]⎯
+
+ FAIL  tests/unit/v3-g.test.ts > left preserves two-hit minimum and exact gold +1 at every power
+ FAIL  tests/unit/v3-g.test.ts > right preserves two-hit minimum and exact gold +1 at every power
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ contact tests/unit/v3-g.test.ts:25:561
+ ❯ tests/unit/v3-g.test.ts:28:180
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[31/63]⎯
+
+ FAIL  tests/unit/v3-g.test.ts > release/reversal interrupts all axes, partial and gold-layer damage regenerates normally
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ contact tests/unit/v3-g.test.ts:25:561
+ ❯ tests/unit/v3-g.test.ts:35:165
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[32/63]⎯
+
+ FAIL  tests/unit/v3-g.test.ts > Down gently aligns an off-center mole before excavation without clipping neighboring floor
+Error: Player must occupy one grid cell
+ ❯ movePlayer src/core/motion.ts:8:63
+      6| export function movePlayer(s:GameState,input:InputIntent):StepResult {
+      7|  const p=s.player,c=playerCell(s),events:GameEvent[]=[],at=(cell:Vec2)…
+      8|  if(p.position.x!==c.x*32+16||p.position.y!==(c.y+1)*32)throw new Erro…
+       |                                                               ^
+      9|  if(traversing(s))return {state:s,events,motionPath:[p.position]};
+     10|  const ignored=s.ignoredPlatforms.filter(b=>b.y>c.y),below={x:c.x,y:c.…
+ ❯ stepGame src/core/simulation.ts:18:17
+ ❯ tests/unit/v3-g.test.ts:40:230
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[33/63]⎯
+
+ FAIL  tests/unit/v3-movement-mining.test.ts > walks both directions, falls off an edge and settles on lower ground
+AssertionError: expected 112 to be close to 81.6, received difference is 30.400000000000006, but expected 0.005
+ ❯ tests/unit/v3-movement-mining.test.ts:17:166
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[34/63]⎯
+
+ FAIL  tests/unit/v3-movement-mining.test.ts > terminal falls, wall collision, world bounds and kill boundary
+Error: Spawn must align to grid
+ ❯ validateLevel src/core/levels.ts:47:58
+     45|         rockCells.add(key);
+     46|     }
+     47|     if(level.spawn.x%32!==16||level.spawn.y%32!==0)throw new Error('Sp…
+       |                                                          ^
+     48|     const box = playerBox(level.spawn);
+     49|     if (box.left < 0 || box.right > level.width * 32 || box.top < 0 ||…
+ ❯ createState src/core/levels.ts:58:19
+ ❯ tests/unit/v3-movement-mining.test.ts:18:92
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[35/63]⎯
+
+ FAIL  tests/unit/v3-movement-mining.test.ts > held movement repeats cadence, empty/distant/solid cells cannot pay twice
+Error: Player must occupy one grid cell
+ ❯ movePlayer src/core/motion.ts:8:63
+      6| export function movePlayer(s:GameState,input:InputIntent):StepResult {
+      7|  const p=s.player,c=playerCell(s),events:GameEvent[]=[],at=(cell:Vec2)…
+      8|  if(p.position.x!==c.x*32+16||p.position.y!==(c.y+1)*32)throw new Erro…
+       |                                                               ^
+      9|  if(traversing(s))return {state:s,events,motionPath:[p.position]};
+     10|  const ignored=s.ignoredPlatforms.filter(b=>b.y>c.y),below={x:c.x,y:c.…
+ ❯ stepGame src/core/simulation.ts:18:17
+ ❯ ticks tests/fixtures/ticks.ts:4:9
+ ❯ tests/unit/v3-movement-mining.test.ts:36:190
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[36/63]⎯
+
+ FAIL  tests/unit/v3-movement-mining.test.ts > facing updates before strike even while blocked; no separate aiming exists
+Error: Player must occupy one grid cell
+ ❯ movePlayer src/core/motion.ts:8:63
+      6| export function movePlayer(s:GameState,input:InputIntent):StepResult {
+      7|  const p=s.player,c=playerCell(s),events:GameEvent[]=[],at=(cell:Vec2)…
+      8|  if(p.position.x!==c.x*32+16||p.position.y!==(c.y+1)*32)throw new Erro…
+       |                                                               ^
+      9|  if(traversing(s))return {state:s,events,motionPath:[p.position]};
+     10|  const ignored=s.ignoredPlatforms.filter(b=>b.y>c.y),below={x:c.x,y:c.…
+ ❯ stepGame src/core/simulation.ts:18:17
+ ❯ ticks tests/fixtures/ticks.ts:4:9
+ ❯ tests/unit/v3-movement-mining.test.ts:37:190
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[37/63]⎯
+
+ FAIL  tests/unit/v3-movement-mining.test.ts > ladder alignment tolerance, reentry, solid ceiling and overlays cannot replace terrain
+Error: Player must occupy one grid cell
+ ❯ movePlayer src/core/motion.ts:8:63
+      6| export function movePlayer(s:GameState,input:InputIntent):StepResult {
+      7|  const p=s.player,c=playerCell(s),events:GameEvent[]=[],at=(cell:Vec2)…
+      8|  if(p.position.x!==c.x*32+16||p.position.y!==(c.y+1)*32)throw new Erro…
+       |                                                               ^
+      9|  if(traversing(s))return {state:s,events,motionPath:[p.position]};
+     10|  const ignored=s.ignoredPlatforms.filter(b=>b.y>c.y),below={x:c.x,y:c.…
+ ❯ stepGame src/core/simulation.ts:18:17
+ ❯ ticks tests/fixtures/ticks.ts:4:9
+ ❯ tests/unit/v3-movement-mining.test.ts:45:313
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[38/63]⎯
+
+ FAIL  tests/unit/v3-movement-mining.test.ts > solid ceiling stops ladder ascent without clipping; released ladder grip holds position
+AssertionError: expected 224 to be 218 // Object.is equality
+
+- Expected
++ Received
+
+- 218
++ 224
+
+ ❯ tests/unit/v3-movement-mining.test.ts:61:366
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39/63]⎯
+
+ FAIL  tests/unit/v3-movement-mining.test.ts > interrupted mining preserves damage before timeout; destroyed floor never regrows
+Error: Player must occupy one grid cell
+ ❯ movePlayer src/core/motion.ts:8:63
+      6| export function movePlayer(s:GameState,input:InputIntent):StepResult {
+      7|  const p=s.player,c=playerCell(s),events:GameEvent[]=[],at=(cell:Vec2)…
+      8|  if(p.position.x!==c.x*32+16||p.position.y!==(c.y+1)*32)throw new Erro…
+       |                                                               ^
+      9|  if(traversing(s))return {state:s,events,motionPath:[p.position]};
+     10|  const ignored=s.ignoredPlatforms.filter(b=>b.y>c.y),below={x:c.x,y:c.…
+ ❯ stepGame src/core/simulation.ts:18:17
+ ❯ ticks tests/fixtures/ticks.ts:4:9
+ ❯ tests/unit/v3-movement-mining.test.ts:62:238
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[40/63]⎯
+
+ FAIL  tests/unit/v3-platforms.test.ts > paid crossing supports walking; no-spend route falls to lower floor
+AssertionError: expected 368 to be close to 304, received difference is 64, but expected 0.005
+ ❯ tests/unit/v3-platforms.test.ts:12:211
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[41/63]⎯
+
+ FAIL  tests/unit/v3-platforms.test.ts > holding Down drops one stacked platform only, release and repress drops next
+AssertionError: expected 288 to be 224 // Object.is equality
+
+- Expected
++ Received
+
+- 224
++ 288
+
+ ❯ tests/unit/v3-platforms.test.ts:18:359
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[42/63]⎯
+
+ FAIL  tests/unit/v3-platforms.test.ts > one-way platforms do not block sides or ascent and catch terminal falls
+Error: Player must occupy one grid cell
+ ❯ movePlayer src/core/motion.ts:8:63
+      6| export function movePlayer(s:GameState,input:InputIntent):StepResult {
+      7|  const p=s.player,c=playerCell(s),events:GameEvent[]=[],at=(cell:Vec2)…
+      8|  if(p.position.x!==c.x*32+16||p.position.y!==(c.y+1)*32)throw new Erro…
+       |                                                               ^
+      9|  if(traversing(s))return {state:s,events,motionPath:[p.position]};
+     10|  const ignored=s.ignoredPlatforms.filter(b=>b.y>c.y),below={x:c.x,y:c.…
+ ❯ stepGame src/core/simulation.ts:18:17
+ ❯ ticks tests/fixtures/ticks.ts:4:9
+ ❯ tests/unit/v3-platforms.test.ts:19:244
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[43/63]⎯
+
+ FAIL  tests/unit/v3-platforms.test.ts > drop at a platform edge succeeds only when the collider clears the adjoining solid bank
+Error: Player must occupy one grid cell
+ ❯ movePlayer src/core/motion.ts:8:63
+      6| export function movePlayer(s:GameState,input:InputIntent):StepResult {
+      7|  const p=s.player,c=playerCell(s),events:GameEvent[]=[],at=(cell:Vec2)…
+      8|  if(p.position.x!==c.x*32+16||p.position.y!==(c.y+1)*32)throw new Erro…
+       |                                                               ^
+      9|  if(traversing(s))return {state:s,events,motionPath:[p.position]};
+     10|  const ignored=s.ignoredPlatforms.filter(b=>b.y>c.y),below={x:c.x,y:c.…
+ ❯ stepGame src/core/simulation.ts:18:17
+ ❯ tests/unit/v3-platforms.test.ts:27:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[44/63]⎯
+
+ FAIL  tests/unit/v4-preservation.test.ts > Milestone B preserves unrelated Core modules
+AssertionError: src\core\boulders.ts: expected '797F17F39E657AF91B53838553482341A3D6C…' to be '685F48247312DD616CB96B1A695F3B98B23BE…' // Object.is equality
+
+Expected: "685F48247312DD616CB96B1A695F3B98B23BEE1B8E4C022B66CF615A83BEB5E6"
+Received: "797F17F39E657AF91B53838553482341A3D6CCD2B42C8827FFCEB578BCE92B43"
+
+ ❯ tests/unit/v4-preservation.test.ts:10:211
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[45/63]⎯
+
+ FAIL  tests/unit/v4-preservation.test.ts > all nine campaign routes preserve completion ticks and intentional B rewards; discovery replays exactly
+AssertionError: expected 1191 to be 1763 // Object.is equality
+
+- Expected
++ Received
+
+- 1763
++ 1191
+
+ ❯ tests/unit/v4-preservation.test.ts:14:265
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[46/63]⎯
+
+
+ Test Files  8 failed | 11 passed (19)
+      Tests  63 failed | 97 passed (160)
+   Start at  22:17:01
+   Duration  4.22s (transform 4.93s, setup 0ms, collect 17.19s, tests 3.17s, environment 5ms, prepare 32.50s)
+

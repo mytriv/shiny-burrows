@@ -1,0 +1,47 @@
+{
+  "engine": "Three.js r180",
+  "projection": "orthographic",
+  "cameraRotation": [
+    -0.3490658503988659,
+    0,
+    0
+  ],
+  "tileWidth": 73.6,
+  "tileHeight": 73.6,
+  "moleWidth": 19.061404496154843,
+  "moleHeight": 25.419545792662717,
+  "moleCenter": {
+    "x": 80,
+    "y": 128
+  },
+  "visualPosition": {
+    "x": 80,
+    "y": 112.53777842341765
+  },
+  "depth": 22,
+  "topSurfacePixels": 17.306219252278837,
+  "terrain": {
+    "tiles": 304,
+    "nuggets": 30,
+    "cracks": 0,
+    "stones": 2782,
+    "pits": 596
+  },
+  "particles": 0,
+  "pixelRatio": 1,
+  "drawCalls": 60,
+  "triangles": 95508,
+  "geometries": 11,
+  "textures": 3,
+  "renderMs": 2.578048780015329,
+  "frameMs": 50.09999999999991,
+  "contextLost": false,
+  "timing": {
+    "medianMs": 33.399999999999636,
+    "p95Ms": 50
+  },
+  "device": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.7390.37 Safari/537.36",
+    "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+  }
+}

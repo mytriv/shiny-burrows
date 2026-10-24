@@ -1,0 +1,202 @@
+
+ RUN  v3.2.4 E:/LightPathfinder/shiny-burrows
+
+ ✓ tests/unit/camera.test.ts (5 tests) 6ms
+ ✓ tests/unit/v4-geometry.test.ts (4 tests) 8ms
+ ✓ tests/unit/v4-terrain.test.ts (1 test) 70ms
+ ✓ tests/unit/v3-a.test.ts (2 tests) 10ms
+ ✓ tests/unit/v4-objects.test.ts (2 tests) 80ms
+ ✓ tests/unit/fragile-chain.test.ts (4 tests) 46ms
+ ✓ tests/unit/v3-platforms.test.ts (10 tests) 30ms
+ ❯ tests/unit/overhaul-a.test.ts (12 tests | 3 failed) 44ms
+   ✓ Up never excavates even through the direct Core digging API 4ms
+   ✓ horizontal ladder exits and same-row falling never backfill a neighboring cell 1ms
+   ✓ downward row crossings create only entered cells, once, including long falls 2ms
+   ✓ collision paths and diagonal junctions authorize downward rows, never lateral entries 0ms
+   ✓ blocked transitions are processed once and cannot become rungs on a repeated collision path 0ms
+   ✓ actual lateral detachment during climbing does not turn gravity microsteps into extra rungs 2ms
+   × landing and repeated grounded collision resolution do not enter the solid floor cell 7ms
+     → Player must occupy one grid cell
+   × diagonal falls past a ladder junction process each crossed row once without upward creation 1ms
+     → Player must occupy one grid cell
+   × Up on an existing ladder holds grip at a solid ceiling without damaging terrain or adding rungs 1ms
+     → Player must occupy one grid cell
+   ✓ First Burrow natural shaft returns to the original bank without upward excavation or added anchors 20ms
+   ✓ shaft-top foothold supports dismount only: Down bypasses it and falls already below it continue 1ms
+   ✓ existing platforms connect the top of a return ladder without creating occupied rungs 3ms
+ ❯ tests/unit/v061-visual.test.ts (4 tests | 1 failed) 152ms
+   × every ordinary and gold terrain variant has the same complete 32×32 solid bounds 46ms
+     → expected [ 32, 32, 21.99216701090336 ] to deeply equal [ 32, 32, 22 ]
+   ✓ gold cells keep opaque earth and their nuggets intersect its front rather than floating in holes 57ms
+   ✓ falling rocks are rounded faceted volumes and every warning/fall/impact pose fits a square cell 32ms
+   ✓ landing feedback resets without changing authoritative rock state 15ms
+ ✓ tests/unit/v4-mole.test.ts (1 test) 221ms
+ ❯ tests/unit/ladder-mining-hotfix.test.ts (24 tests | 11 failed) 94ms
+   ✓ -1: held dirt mining preserves exact height/grip and two-hit cadence 7ms
+   ✓ -1: first-hit release and interrupted cooldown retain stationary grip 2ms
+   × -1: releasing on destruction holds, continuing moves only until actual support loss 15ms
+     → expected 192 to be greater than 192
+   ✓ -1: hard mines while suspended without falling or extra ladders 10ms
+   ✓ -1: ore_soil mines while suspended without falling or extra ladders 7ms
+   ✓ 1: held dirt mining preserves exact height/grip and two-hit cadence 1ms
+   ✓ 1: first-hit release and interrupted cooldown retain stationary grip 1ms
+   × 1: releasing on destruction holds, continuing moves only until actual support loss 3ms
+     → expected 192 to be greater than 192
+   ✓ 1: hard mines while suspended without falling or extra ladders 9ms
+   ✓ 1: ore_soil mines while suspended without falling or extra ladders 4ms
+   × empty horizontal movement keeps grip within tolerance and applies gravity only outside support 3ms
+     → expected false to be true // Object.is equality
+   × -1: suspended dirt at height 160 remains exactly two hits at every upgrade 2ms
+     → expected false to be true // Object.is equality
+   × -1: suspended dirt at height 192 remains exactly two hits at every upgrade 3ms
+     → expected false to be true // Object.is equality
+   × -1: suspended dirt at height 224 remains exactly two hits at every upgrade 1ms
+     → expected false to be true // Object.is equality
+   × -1: suspended dirt at height 256 remains exactly two hits at every upgrade 1ms
+     → expected false to be true // Object.is equality
+   ✓ -1: neighboring rows cannot steal a cell-aligned horizontal mining target 2ms
+   ✓ -1: interrupted damage regenerates without falling; bedrock blocks without detachment 5ms
+   × 1: suspended dirt at height 160 remains exactly two hits at every upgrade 1ms
+     → expected false to be true // Object.is equality
+   × 1: suspended dirt at height 192 remains exactly two hits at every upgrade 1ms
+     → expected false to be true // Object.is equality
+   × 1: suspended dirt at height 224 remains exactly two hits at every upgrade 1ms
+     → expected false to be true // Object.is equality
+   × 1: suspended dirt at height 256 remains exactly two hits at every upgrade 1ms
+     → expected false to be true // Object.is equality
+   ✓ 1: neighboring rows cannot steal a cell-aligned horizontal mining target 1ms
+   ✓ 1: interrupted damage regenerates without falling; bedrock blocks without detachment 6ms
+   ✓ consecutive side blocks transition from suspended digging to supported tunnel mining, with interruption 4ms
+ ✓ tests/unit/v3-f.test.ts (13 tests) 94ms
+stdout | tests/levels/v3-progression.test.ts > all three authored levels solve with base power, no spending or jumps
+First Burrow base route: 1191 ticks / 19.9s
+Amber Hollow base route: 1349 ticks / 22.5s
+Golden Depths base route: 2035 ticks / 33.9s
+
+ ✓ tests/unit/v3-g.test.ts (19 tests) 207ms
+ ✓ tests/unit/hazards.test.ts (10 tests) 239ms
+ ✓ tests/unit/v5-visual.test.ts (4 tests) 348ms
+   ✓ clay surfaces remain deterministic across renderer recreation and reuse shared textures  326ms
+ ✓ tests/levels/v3-progression.test.ts (6 tests) 291ms
+ ✓ tests/unit/v4-preservation.test.ts (2 tests) 380ms
+   ✓ all nine campaign routes preserve completion ticks and intentional B rewards; discovery replays exactly  374ms
+ ✓ tests/unit/v3-movement-mining.test.ts (18 tests) 488ms
+   ✓ 1000 ticks replay states/events exactly with no overlaps or negative funds  392ms
+ ✓ tests/unit/discovery-b.test.ts (19 tests) 249ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 15 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > -1: releasing on destruction holds, continuing moves only until actual support loss
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > 1: releasing on destruction holds, continuing moves only until actual support loss
+AssertionError: expected 192 to be greater than 192
+ ❯ tests/unit/ladder-mining-hotfix.test.ts:38:76
+     36|    moved ||= s.player.position.x!==before.player.position.x;
+     37|    if(ladderAt(s)){expect(s.player.climbing).toBe(true);expect(s.playe…
+     38|    else {expect(s.player.climbing).toBe(false);expect(s.player.positio…
+       |                                                                            ^
+     39|    expect(s.ladders).toEqual(initial.ladders);
+     40|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/15]⎯
+
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > empty horizontal movement keeps grip within tolerance and applies gravity only outside support
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/ladder-mining-hotfix.test.ts:54:192
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/15]⎯
+
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > -1: suspended dirt at height 160 remains exactly two hits at every upgrade
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > -1: suspended dirt at height 192 remains exactly two hits at every upgrade
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > -1: suspended dirt at height 224 remains exactly two hits at every upgrade
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > -1: suspended dirt at height 256 remains exactly two hits at every upgrade
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > 1: suspended dirt at height 160 remains exactly two hits at every upgrade
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > 1: suspended dirt at height 192 remains exactly two hits at every upgrade
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > 1: suspended dirt at height 224 remains exactly two hits at every upgrade
+ FAIL  tests/unit/ladder-mining-hotfix.test.ts > 1: suspended dirt at height 256 remains exactly two hits at every upgrade
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/ladder-mining-hotfix.test.ts:60:262
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/15]⎯
+
+ FAIL  tests/unit/overhaul-a.test.ts > landing and repeated grounded collision resolution do not enter the solid floor cell
+Error: Player must occupy one grid cell
+ ❯ movePlayer src/core/motion.ts:8:63
+      6| export function movePlayer(s:GameState,input:InputIntent):StepResult {
+      7|  const p=s.player,c=playerCell(s),events:GameEvent[]=[],at=(cell:Vec2)…
+      8|  if(p.position.x!==c.x*32+16||p.position.y!==(c.y+1)*32)throw new Erro…
+       |                                                               ^
+      9|  if(traversing(s))return {state:input.downPressed&&s.traversal?{...s,t…
+     10|  const ignored=s.ignoredPlatforms.filter(b=>b.y>c.y),below={x:c.x,y:c.…
+ ❯ stepGame src/core/simulation.ts:18:17
+ ❯ tests/unit/overhaul-a.test.ts:46:25
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/15]⎯
+
+ FAIL  tests/unit/overhaul-a.test.ts > diagonal falls past a ladder junction process each crossed row once without upward creation
+Error: Player must occupy one grid cell
+ ❯ movePlayer src/core/motion.ts:8:63
+      6| export function movePlayer(s:GameState,input:InputIntent):StepResult {
+      7|  const p=s.player,c=playerCell(s),events:GameEvent[]=[],at=(cell:Vec2)…
+      8|  if(p.position.x!==c.x*32+16||p.position.y!==(c.y+1)*32)throw new Erro…
+       |                                                               ^
+      9|  if(traversing(s))return {state:input.downPressed&&s.traversal?{...s,t…
+     10|  const ignored=s.ignoredPlatforms.filter(b=>b.y>c.y),below={x:c.x,y:c.…
+ ❯ stepGame src/core/simulation.ts:18:17
+ ❯ tests/unit/overhaul-a.test.ts:52:32
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/15]⎯
+
+ FAIL  tests/unit/overhaul-a.test.ts > Up on an existing ladder holds grip at a solid ceiling without damaging terrain or adding rungs
+Error: Player must occupy one grid cell
+ ❯ movePlayer src/core/motion.ts:8:63
+      6| export function movePlayer(s:GameState,input:InputIntent):StepResult {
+      7|  const p=s.player,c=playerCell(s),events:GameEvent[]=[],at=(cell:Vec2)…
+      8|  if(p.position.x!==c.x*32+16||p.position.y!==(c.y+1)*32)throw new Erro…
+       |                                                               ^
+      9|  if(traversing(s))return {state:input.downPressed&&s.traversal?{...s,t…
+     10|  const ignored=s.ignoredPlatforms.filter(b=>b.y>c.y),below={x:c.x,y:c.…
+ ❯ stepGame src/core/simulation.ts:18:17
+ ❯ tests/unit/overhaul-a.test.ts:59:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/15]⎯
+
+ FAIL  tests/unit/v061-visual.test.ts > every ordinary and gold terrain variant has the same complete 32×32 solid bounds
+AssertionError: expected [ 32, 32, 21.99216701090336 ] to deeply equal [ 32, 32, 22 ]
+
+- Expected
++ Received
+
+  [
+    32,
+    32,
+-   22,
++   21.99216701090336,
+  ]
+
+ ❯ tests/unit/v061-visual.test.ts:12:150
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/15]⎯
+
+
+ Test Files  3 failed | 16 passed (19)
+      Tests  15 failed | 145 passed (160)
+   Start at  22:20:42
+   Duration  1.89s (transform 2.13s, setup 0ms, collect 9.57s, tests 3.06s, environment 6ms, prepare 6.23s)
+

@@ -1,0 +1,40 @@
+{
+  "engine": "Three.js r180",
+  "projection": "orthographic",
+  "cameraRotation": [
+    0,
+    0,
+    0
+  ],
+  "tileWidth": 68.375,
+  "tileHeight": 68.375,
+  "moleWidth": 18.087298979540947,
+  "moleHeight": 23.400000000000006,
+  "moleCenter": {
+    "x": 80,
+    "y": 128
+  },
+  "visualPosition": {
+    "x": 80,
+    "y": 115
+  },
+  "depth": 8,
+  "terrain": {
+    "tiles": 304,
+    "nuggets": 18,
+    "cracks": 0
+  },
+  "particles": 0,
+  "pixelRatio": 1,
+  "drawCalls": 49,
+  "triangles": 44016,
+  "geometries": 4,
+  "textures": 0,
+  "renderMs": 0.8677966101687022,
+  "frameMs": 16.65999999999999,
+  "contextLost": false,
+  "timing": {
+    "medianMs": 33.29999999999973,
+    "p95Ms": 33.400000000000546
+  }
+}

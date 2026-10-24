@@ -1,0 +1,101 @@
+{
+  "empty": {
+    "median": 16.699999999999932,
+    "p95": 16.700000000000045
+  },
+  "idle": {
+    "median": 16.699999999999818,
+    "p95": 16.700000000000273,
+    "metrics": {
+      "engine": "Three.js r180",
+      "projection": "orthographic",
+      "cameraRotation": [
+        -0.3490658503988659,
+        0,
+        0
+      ],
+      "tileWidth": 59.2,
+      "tileHeight": 59.2,
+      "moleWidth": 19.061404496154843,
+      "moleHeight": 25.328094810421284,
+      "moleCenter": {
+        "x": 80,
+        "y": 128
+      },
+      "visualPosition": {
+        "x": 80,
+        "y": 112.53777842341765
+      },
+      "depth": 22,
+      "topSurfacePixels": 13.920219833354718,
+      "terrain": {
+        "tiles": 4,
+        "nuggets": 2,
+        "cracks": 0,
+        "stones": 31,
+        "pits": 6,
+        "fog": 422,
+        "hints": 0,
+        "rebuilds": 4,
+        "instances": 478
+      },
+      "particles": 0,
+      "pixelRatio": 1,
+      "drawCalls": 56,
+      "triangles": 11552,
+      "geometries": 8,
+      "textures": 3,
+      "renderMs": 0.6349999996523062,
+      "frameMs": 16.699999999999818,
+      "contextLost": false
+    }
+  },
+  "explored": {
+    "median": 16.699999999999818,
+    "p95": 16.799999999999272,
+    "metrics": {
+      "engine": "Three.js r180",
+      "projection": "orthographic",
+      "cameraRotation": [
+        -0.3490658503988659,
+        0,
+        0
+      ],
+      "tileWidth": 59.2,
+      "tileHeight": 59.2,
+      "moleWidth": 19.578090942184893,
+      "moleHeight": 23.556449999999998,
+      "moleCenter": {
+        "x": 92.39999999999998,
+        "y": 128
+      },
+      "visualPosition": {
+        "x": 92.39999999999998,
+        "y": 112.53777842341765
+      },
+      "depth": 22,
+      "topSurfacePixels": 13.920219833354718,
+      "terrain": {
+        "tiles": 5,
+        "nuggets": 0,
+        "cracks": 0,
+        "stones": 46,
+        "pits": 10,
+        "fog": 416,
+        "hints": 0,
+        "rebuilds": 8,
+        "instances": 493
+      },
+      "particles": 18,
+      "pixelRatio": 1,
+      "drawCalls": 55,
+      "triangles": 14880,
+      "geometries": 9,
+      "textures": 3,
+      "renderMs": 0.643888888715042,
+      "frameMs": 16.800000000000182,
+      "contextLost": false
+    }
+  },
+  "lastTerrainSyncMs": "0"
+}

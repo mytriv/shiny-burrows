@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Shiny Burrows</title></head>
+<body><main>
+<header aria-label="Mining status">
+ <div class="hud-row">
+  <div class="wallet panel"><svg class="nugget-icon" viewBox="0 0 48 44" aria-hidden="true"><path fill="#a74a14" d="M6 30 4 14 18 3 36 6 45 20 35 38 15 41Z"/><path fill="#ffc334" d="m6 14 12-9 17 3 7 12-9 15-18 3-8-9Z"/><path fill="#ffe784" d="m7 15 12-9 5 13-15 8Z"/><path fill="#ffdb4b" d="m24 19 11-10 6 11-8 14Z"/></svg><div><span id="wallet">0</span><small>GOLD</small></div></div>
+  <div class="depth"><small>DEPTH</small><strong id="depth">0<span>m</span></strong></div>
+  <div class="power panel" aria-label="Claw power"><svg viewBox="0 0 40 40" aria-hidden="true"><path fill="#e1ae77" d="M5 22 10 11 20 8 31 14 34 26 23 34 11 31Z"/><path fill="#fff2c7" d="M7 17Q4 6 12 3L13 18ZM17 15Q15 2 23 1L24 17ZM27 19Q27 7 35 9L33 24Z"/></svg><strong id="power">1</strong></div>
+  <button id="settings-button" class="icon-button" aria-label="Settings and help" title="Settings and help">⚙</button>
+ </div>
+ <div class="secondary-row"><div class="goal"><div class="goal-label"><span id="level-name">First Burrow</span><span id="goal-label">0 / 20</span></div><progress id="goal" max="20" value="0" aria-label="Gold goal"></progress></div><div class="quick-actions"><button id="sound" class="icon-button" aria-label="Mute sound" aria-pressed="false" title="Toggle sound">♪</button><button id="pause" class="icon-button" aria-label="Pause" title="Pause">Ⅱ</button><button id="restart" class="icon-button" aria-label="Restart" title="Restart">↻</button></div></div>
+ <span id="stats" class="sr-only" role="status"></span>
+</header>
+<div id="game"></div><div id="feedback" class="toast" aria-live="polite"></div>
+<section id="station" hidden aria-label="Surface station"><small>SHINY BURROWS</small><h2 id="station-title">Surface workshop</h2><p id="station-stats"></p><button id="upgrade">Claw power</button><button id="next">Next mine</button><button id="new-adventure">New Adventure</button></section>
+<footer><nav aria-label="Game controls"><div class="direction-pad"><button data-action="left" aria-label="Move left">◀</button><button data-action="right" aria-label="Move right">▶</button><button data-action="up" aria-label="Climb up" title="Up: climb existing ladders only">▲</button><button data-action="down" aria-label="Climb down or drop">▼</button></div><div class="equipment"><button data-action="platform" aria-label="Platform"><span aria-hidden="true">▰</span><small id="inventory">0</small></button><button data-action="buy" aria-label="Buy ▰ 5"><span aria-hidden="true">▰ <b>＋</b></span><small>5 gold</small></button></div></nav></footer>
+<dialog id="settings" aria-labelledby="settings-title"><h2 id="settings-title">Your burrow</h2><p>Hold Left, Right or Down to dig. Up only climbs existing ladders.</p><dl><dt>A / D or ← / →</dt><dd>Walk and dig sideways</dd><dt>W / S or ↑ / ↓</dt><dd>Down digs or descends · Up only climbs</dd><dt>Release on a ladder</dt><dd>Stay where you are</dd><dt>Down on a platform</dt><dd>Drop through</dd><dt>B / E</dt><dd>Buy / place one platform for 5 gold</dd><dt>Escape / R</dt><dd>Pause / restart this mine</dd></dl><p>Explore to reveal the mine. Warm soil flecks hint at nearby buried gold. Larger deposits are worth more. Collect the gold goal, then find the green exit. Upgrade your claws at the surface.</p><button id="close-settings">Back to mine</button></dialog>
+</main><script type="module" src="/src/main.ts"></script></body></html>

@@ -1,0 +1,149 @@
+[
+  {
+    "width": 390,
+    "height": 844,
+    "median": 33.30000000000018,
+    "p95": 33.400000000000546,
+    "metrics": {
+      "engine": "Three.js r180",
+      "projection": "orthographic",
+      "cameraRotation": [
+        -0.3490658503988659,
+        0,
+        0
+      ],
+      "tileWidth": 59.2,
+      "tileHeight": 59.2,
+      "moleWidth": 19.061404496154843,
+      "moleHeight": 25.256400000000014,
+      "moleCenter": {
+        "x": 80,
+        "y": 128
+      },
+      "visualPosition": {
+        "x": 80,
+        "y": 115
+      },
+      "depth": 22,
+      "topSurfacePixels": 13.920219833354718,
+      "terrain": {
+        "tiles": 304,
+        "nuggets": 20,
+        "cracks": 0,
+        "stones": 2178,
+        "pits": 592,
+        "fog": 0,
+        "hints": 0,
+        "rebuilds": 4,
+        "instances": 3862
+      },
+      "particles": 0,
+      "pixelRatio": 1,
+      "drawCalls": 75,
+      "triangles": 87064,
+      "geometries": 11,
+      "textures": 3,
+      "renderMs": 0.880571428835392,
+      "frameMs": 33.400000000000546,
+      "contextLost": false
+    }
+  },
+  {
+    "width": 844,
+    "height": 390,
+    "median": 16.699999999999818,
+    "p95": 33.30000000000018,
+    "metrics": {
+      "engine": "Three.js r180",
+      "projection": "orthographic",
+      "cameraRotation": [
+        -0.3490658503988659,
+        0,
+        0
+      ],
+      "tileWidth": 73.6,
+      "tileHeight": 73.6,
+      "moleWidth": 19.061404496154843,
+      "moleHeight": 25.256400000000014,
+      "moleCenter": {
+        "x": 80,
+        "y": 128
+      },
+      "visualPosition": {
+        "x": 80,
+        "y": 115
+      },
+      "depth": 22,
+      "topSurfacePixels": 17.306219252278837,
+      "terrain": {
+        "tiles": 304,
+        "nuggets": 20,
+        "cracks": 0,
+        "stones": 2178,
+        "pits": 592,
+        "fog": 0,
+        "hints": 0,
+        "rebuilds": 4,
+        "instances": 3862
+      },
+      "particles": 0,
+      "pixelRatio": 1,
+      "drawCalls": 57,
+      "triangles": 56792,
+      "geometries": 11,
+      "textures": 3,
+      "renderMs": 0.49833333293596904,
+      "frameMs": 16.600000000000364,
+      "contextLost": false
+    }
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "median": 33.29999999999927,
+    "p95": 33.40000000000009,
+    "metrics": {
+      "engine": "Three.js r180",
+      "projection": "orthographic",
+      "cameraRotation": [
+        -0.3490658503988659,
+        0,
+        0
+      ],
+      "tileWidth": 128,
+      "tileHeight": 128,
+      "moleWidth": 19.061404496154843,
+      "moleHeight": 25.256400000000014,
+      "moleCenter": {
+        "x": 80,
+        "y": 128
+      },
+      "visualPosition": {
+        "x": 80,
+        "y": 115
+      },
+      "depth": 22,
+      "topSurfacePixels": 30.097772612658847,
+      "terrain": {
+        "tiles": 304,
+        "nuggets": 20,
+        "cracks": 0,
+        "stones": 2178,
+        "pits": 592,
+        "fog": 0,
+        "hints": 0,
+        "rebuilds": 4,
+        "instances": 3862
+      },
+      "particles": 0,
+      "pixelRatio": 0.6083080683737909,
+      "drawCalls": 67,
+      "triangles": 57856,
+      "geometries": 11,
+      "textures": 3,
+      "renderMs": 0.5900000000993411,
+      "frameMs": 16.699999999999818,
+      "contextLost": false
+    }
+  }
+]

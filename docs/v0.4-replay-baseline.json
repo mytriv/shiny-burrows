@@ -1,0 +1,65 @@
+[
+  {
+    "level": "first-burrow",
+    "power": 1,
+    "tick": 1763,
+    "wallet": 30,
+    "sha256": "a22758af7ab6106f1a590d41d66c8bb858f3e9ebb88af371df7403501cafe82b"
+  },
+  {
+    "level": "first-burrow",
+    "power": 2,
+    "tick": 1571,
+    "wallet": 30,
+    "sha256": "dc9c503316b682c1b889c04da7263e219f98113cde26c6eea30e5374af1f58cc"
+  },
+  {
+    "level": "first-burrow",
+    "power": 3,
+    "tick": 1571,
+    "wallet": 30,
+    "sha256": "9bd7a9d95d1f786ec93a08c41b804e912a9d145d0978feac2a3aa4d8e9b0b16d"
+  },
+  {
+    "level": "amber-hollow",
+    "power": 1,
+    "tick": 1866,
+    "wallet": 71,
+    "sha256": "b74803d72b29e41310f16c2e7c6f537ef845f959e0c39ac2433e9315a87d3950"
+  },
+  {
+    "level": "amber-hollow",
+    "power": 2,
+    "tick": 1506,
+    "wallet": 71,
+    "sha256": "d23e801dbcc31c026e68b492df0e055f6c23fa67992cb3f8cf59a0c1f7aff557"
+  },
+  {
+    "level": "amber-hollow",
+    "power": 3,
+    "tick": 1506,
+    "wallet": 71,
+    "sha256": "33a55af113d49414dd2579936e85b3a03125f409e3707ad0e7f5ba13adbfd936"
+  },
+  {
+    "level": "golden-depths",
+    "power": 1,
+    "tick": 2559,
+    "wallet": 110,
+    "sha256": "7925ed4cac3efe871ea682d16a9b3d9b0d5fe8f0d4ec439939fd21fa1335b6de"
+  },
+  {
+    "level": "golden-depths",
+    "power": 2,
+    "tick": 1863,
+    "wallet": 110,
+    "sha256": "feac50866984234664dc2f3908f7f3738bc06f4fb465ab2d3ea903331c27d6fd"
+  },
+  {
+    "level": "golden-depths",
+    "power": 3,
+    "tick": 1575,
+    "wallet": 110,
+    "sha256": "744f9a45e3bca9ec49586378cf2d83058da4548c9a8cb393c2e9e383bfd56c7e"
+  }
+]

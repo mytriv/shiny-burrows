@@ -1,0 +1,36 @@
+
+ RUN  v3.2.4 E:/LightPathfinder/shiny-burrows
+
+ ✓ tests/unit/camera.test.ts (5 tests) 6ms
+ ✓ tests/unit/v4-geometry.test.ts (4 tests) 9ms
+ ✓ tests/unit/v3-a.test.ts (2 tests) 10ms
+ ✓ tests/unit/v4-objects.test.ts (2 tests) 68ms
+ ✓ tests/unit/overhaul-a.test.ts (12 tests) 42ms
+ ✓ tests/unit/v4-terrain.test.ts (1 test) 70ms
+ ✓ tests/unit/v3-platforms.test.ts (10 tests) 33ms
+ ✓ tests/unit/fragile-chain.test.ts (4 tests) 46ms
+stdout | tests/levels/v3-progression.test.ts > all three authored levels solve with base power, no spending or jumps
+First Burrow base route: 1191 ticks / 19.9s
+Amber Hollow base route: 1349 ticks / 22.5s
+Golden Depths base route: 2035 ticks / 33.9s
+
+ ✓ tests/unit/v061-visual.test.ts (4 tests) 154ms
+ ✓ tests/unit/ladder-mining-hotfix.test.ts (24 tests) 106ms
+ ✓ tests/unit/v4-mole.test.ts (1 test) 201ms
+ ✓ tests/unit/v3-f.test.ts (13 tests) 101ms
+ ✓ tests/unit/v3-g.test.ts (19 tests) 221ms
+ ✓ tests/levels/v3-progression.test.ts (6 tests) 325ms
+ ✓ tests/unit/v5-visual.test.ts (4 tests) 381ms
+   ✓ clay surfaces remain deterministic across renderer recreation and reuse shared textures  350ms
+ ✓ tests/unit/hazards.test.ts (10 tests) 294ms
+ ✓ tests/unit/v4-preservation.test.ts (2 tests) 412ms
+   ✓ all nine campaign routes preserve completion ticks and intentional B rewards; discovery replays exactly  407ms
+ ✓ tests/unit/v3-movement-mining.test.ts (18 tests) 497ms
+   ✓ 1000 ticks replay states/events exactly with no overlaps or negative funds  402ms
+ ✓ tests/unit/discovery-b.test.ts (19 tests) 207ms
+
+ Test Files  19 passed (19)
+      Tests  160 passed (160)
+   Start at  22:21:17
+   Duration  2.00s (transform 2.73s, setup 0ms, collect 9.97s, tests 3.18s, environment 4ms, prepare 6.46s)
+

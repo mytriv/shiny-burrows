@@ -1,0 +1,51 @@
+{
+  "engine": "Three.js r180",
+  "projection": "orthographic",
+  "cameraRotation": [
+    -0.3490658503988659,
+    0,
+    0
+  ],
+  "tileWidth": 128,
+  "tileHeight": 128,
+  "moleWidth": 19.061404496154843,
+  "moleHeight": 25.40322915150533,
+  "moleCenter": {
+    "x": 80,
+    "y": 128
+  },
+  "visualPosition": {
+    "x": 80,
+    "y": 112.53777842341765
+  },
+  "depth": 22,
+  "topSurfacePixels": 30.097772612658847,
+  "terrain": {
+    "tiles": 4,
+    "nuggets": 2,
+    "cracks": 0,
+    "stones": 31,
+    "pits": 6,
+    "fog": 422,
+    "hints": 0,
+    "rebuilds": 4,
+    "instances": 478
+  },
+  "particles": 0,
+  "pixelRatio": 0.6004560394034361,
+  "drawCalls": 56,
+  "triangles": 11552,
+  "geometries": 8,
+  "textures": 3,
+  "renderMs": 1.2354166668374091,
+  "frameMs": 16.700000000000045,
+  "contextLost": false,
+  "timing": {
+    "medianMs": 16.699999999999818,
+    "p95Ms": 16.799999999999727
+  },
+  "device": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.7390.37 Safari/537.36",
+    "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+  }
+}

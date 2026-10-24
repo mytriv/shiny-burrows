@@ -1,0 +1,182 @@
+[
+  {
+    "animation": "dig-left",
+    "tick": 348,
+    "pose": {
+      "bodyY": 0,
+      "bodyAngle": 0.045,
+      "headY": 3.1,
+      "arms": [
+        -1.6907963267948967,
+        0.3
+      ],
+      "legs": [
+        0,
+        0
+      ],
+      "strikeAge": 0
+    }
+  },
+  {
+    "animation": "dig-left",
+    "tick": 351,
+    "pose": {
+      "bodyY": 0,
+      "bodyAngle": 0,
+      "headY": 3.1,
+      "arms": [
+        -1.5707963267948966,
+        0.3
+      ],
+      "legs": [
+        0,
+        0
+      ],
+      "strikeAge": 3
+    }
+  },
+  {
+    "animation": "dig-left",
+    "tick": 354,
+    "pose": {
+      "bodyY": 0,
+      "bodyAngle": 0,
+      "headY": 3.1,
+      "arms": [
+        -0.8207963267948966,
+        0.3
+      ],
+      "legs": [
+        0,
+        0
+      ],
+      "strikeAge": 6
+    }
+  },
+  {
+    "animation": "dig-left",
+    "tick": 357,
+    "pose": {
+      "bodyY": 0,
+      "bodyAngle": 0,
+      "headY": 3.1,
+      "arms": [
+        -1.5707963267948966,
+        0.3
+      ],
+      "legs": [
+        0,
+        0
+      ],
+      "strikeAge": 9
+    }
+  },
+  {
+    "animation": "dig-left",
+    "tick": 360,
+    "pose": {
+      "bodyY": 0,
+      "bodyAngle": 0,
+      "headY": 3.1,
+      "arms": [
+        -1.5707963267948966,
+        0.3
+      ],
+      "legs": [
+        0,
+        0
+      ],
+      "strikeAge": 12
+    }
+  },
+  {
+    "animation": "dig-left",
+    "tick": 363,
+    "pose": {
+      "bodyY": 0,
+      "bodyAngle": -0.007821723252011544,
+      "headY": 3.1,
+      "arms": [
+        -1.3830749687466195,
+        0.3
+      ],
+      "legs": [
+        0,
+        0
+      ],
+      "strikeAge": 15
+    }
+  },
+  {
+    "animation": "dig-left",
+    "tick": 366,
+    "pose": {
+      "bodyY": 0,
+      "bodyAngle": -0.029389262614623657,
+      "headY": 3.1,
+      "arms": [
+        -0.8654540240439288,
+        0.3
+      ],
+      "legs": [
+        0,
+        0
+      ],
+      "strikeAge": 18
+    }
+  },
+  {
+    "animation": "dig-left",
+    "tick": 369,
+    "pose": {
+      "bodyY": 0,
+      "bodyAngle": -0.044550326209418394,
+      "headY": 3.1,
+      "arms": [
+        -0.5015884977688552,
+        0.3
+      ],
+      "legs": [
+        0,
+        0
+      ],
+      "strikeAge": 21
+    }
+  },
+  {
+    "animation": "dig-left",
+    "tick": 372,
+    "pose": {
+      "bodyY": 0,
+      "bodyAngle": 0.045,
+      "headY": 3.1,
+      "arms": [
+        -1.6907963267948967,
+        0.3
+      ],
+      "legs": [
+        0,
+        0
+      ],
+      "strikeAge": 0
+    }
+  },
+  {
+    "animation": "dig-left",
+    "tick": 375,
+    "pose": {
+      "bodyY": 0,
+      "bodyAngle": 0,
+      "headY": 3.1,
+      "arms": [
+        -1.5707963267948966,
+        0.3
+      ],
+      "legs": [
+        0,
+        0
+      ],
+      "strikeAge": 3
+    }
+  }
+]
