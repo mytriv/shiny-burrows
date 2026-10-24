@@ -1,5 +1,15 @@
 # Implementation status
 
+## GitHub Pages publication (2026-10-24; verified live)
+
+Repository: https://github.com/mytriv/shiny-burrows — playable game: https://mytriv.github.io/shiny-burrows/
+
+Committed and pushed the B.5 project to `main`. The Pages workflow installs locked dependencies on Node22, runs unit tests, typecheck, lint and the production build, then publishes only `dist/`. Existing relative Vite asset paths support the repository subpath. Local reference images, dependencies and generated build/test folders are ignored; Core/content Git attributes preserve exact source bytes for cross-platform hash regressions. No gameplay code, dependencies or engine versions changed for publication.
+
+Local publication checks: **172 unit tests passed (20 files)**, typecheck/lint/build passed. GitHub Actions run **40131834049**, commit `d13e9d8eb790f164d9a49d5d88bf42a89dcaa029`, passed both build and deploy jobs. The initial deployment attempt failed at Pages metadata configuration; explicit `pages: read` build permissions resolved it.
+
+`node scripts/check-pages.mjs` passed against the public HTTPS URL: **HTTP200**, no browser console/page/asset errors, successful one-cell movement, contact mining, gold credit and post-mining movement in all three cases: keyboard1920×1080, mouse844×390 landscape, touch390×844 portrait. The check uses Chromium and actual input events. This live smoke check supplements the existing **45-test local production browser suite** recorded below; it does not establish physical-device or non-Chromium support. Historical performance limitations remain tracked below. Future pushes to `main` automatically rebuild and redeploy.
+
 ## Milestone B.5 — cell traversal and presentation polish (2026-10-24; verified locally)
 
 Authority: `docs/MILESTONE-B5-REQUEST.md`, copied from the user's pasted request. This supersedes continuous player motion and fractional-rest assumptions in older specifications/status sections. Pre-code design and migration tradeoffs: `docs/MILESTONE-B5.md`. Major gameplay expansion remains paused. The user's smooth real-PC play report is retained as user evidence; historical SwiftShader limits are documented below and are not treated as this milestone's immediate blocker.

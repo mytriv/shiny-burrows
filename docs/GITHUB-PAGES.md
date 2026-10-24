@@ -9,3 +9,5 @@ Pushes to `main` run `.github/workflows/pages.yml`: install the locked dependenc
 Source, tests, notices and development evidence are versioned. Dependencies, generated bundles/browser results and local reference images are ignored. Core/content Git attributes preserve exact bytes across Windows/Linux because preservation regressions check source hashes.
 
 Full browser/performance regressions remain available via `npm run test:browser`; their historical software-renderer limitations remain documented. Deployment CI gates deterministic unit/type/lint/build checks. Published-site input and asset verification is recorded in the latest implementation status; this is not YouTube or physical-device certification.
+
+Run `node scripts/check-pages.mjs` to check the public game with Chromium (install the existing Playwright browser first if needed). It verifies HTTP/assets, movement, mining and gold collection with desktop keyboard, landscape mouse and portrait touch input. An optional first argument selects another deployment URL. All three public-site cases passed on2026-10-24.
